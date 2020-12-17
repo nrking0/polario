@@ -1,40 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { useState, useEffect } from 'react';
+
+// Styles
+import './styles/styles.scss';
+
+// Components
+
+// React Imports (e.g. Material UI)
+
+// Hooks
+import useWindowUrl from './hooks/useWindowUrl';
 
 function App() {
 
-  const [url, setUrl] = useState('');
-  const [test, setTest] = useState('');
-
-  useEffect(() => {
-    chrome.tabs.query({ 'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT },
-      function (tabs) {
-        setUrl( new URL(tabs[0].url).hostname);
-      }
-    );
-
-  }, []);
+  const url = useWindowUrl();
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1>Hello, Amit!</h1>
-        <h1>{'Url: ' + url}</h1>
-        <h5>{'Host: ' + test}</h5>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-content">
+      <p>{'Url: ' + url}</p>
     </div>
   );
 }

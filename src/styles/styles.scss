@@ -1,0 +1,9 @@
+@import "../styles/colors.scss";
+@import "../styles/variables.scss";
+
+.app-content {
+    // height: 100%;
+    background-color: yellow;
+    width: 500px;
+    height: fit-content;
+}
