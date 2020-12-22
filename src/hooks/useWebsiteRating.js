@@ -16,8 +16,6 @@ const useWebsiteRating = (url) => {
          * 
          * @source : http://mbfcapi.herokuapp.com/api/v1/sources
          */
-
-        console.log("here 2!")
         const search_results = mbfc.sources.find(source => {
             return source.url === url;
         })
