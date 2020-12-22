@@ -9,10 +9,12 @@ import './styles/styles.scss';
 
 // Hooks
 import useWindowUrl from './hooks/useWindowUrl';
+import useWebsiteRating from './hooks/useWindowUrl';
 
 function App() {
 
   const url = useWindowUrl();
+  const rating = useWebsiteRating(url);
 
   return (
     <div className="app-content">

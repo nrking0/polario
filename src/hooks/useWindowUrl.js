@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 /**
  * Returns the hostname of the web domain of the current tab user is on
  */
-const useWindowUrl = (props) => {
+const useWindowUrl = () => {
 
     const [url, setUrl] = useState(null);
 
