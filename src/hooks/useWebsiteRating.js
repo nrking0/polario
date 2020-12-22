@@ -8,7 +8,7 @@ import mbfc from '../data/mbfc.json';
  */
 const useWebsiteRating = (url) => {
 
-    const [rating, setRating] = useState({});
+    const [rating, setRating] = useState(null);
 
     useEffect(() => { 
         /**
@@ -16,12 +16,15 @@ const useWebsiteRating = (url) => {
          * 
          * @source : http://mbfcapi.herokuapp.com/api/v1/sources
          */
-        const search_results = mbfc.sources.filter(source => {
+
+        console.log("here 2!")
+        const search_results = mbfc.sources.find(source => {
             return source.url === url;
         })
 
+
         setRating(search_results);
-    }, [])
+    });
 
 
     return rating;
