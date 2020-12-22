@@ -32,9 +32,17 @@ const accuracy_points = {
     "not parsed": -1
 }
 
-const useWebsitePoints = (bias, accuracy) => {
+const useWebsitePoints = (rating) => {
 
     const [score, setScore] = useState();
+
+    let bias = "";
+    let accuracy = "";
+
+    if (rating !== null && rating !== undefined) {
+        bias = rating.bias;
+        accuracy = rating.accuracy;
+    }
 
     useEffect(() => {
 

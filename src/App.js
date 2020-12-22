@@ -16,6 +16,7 @@ function App() {
 
   const url = useWindowUrl();
   const rating = useWebsiteRating(`https://${url}`);
+  const scores = useWebsitePoints(rating);
 
   return (
     <div className="app-content">
@@ -25,6 +26,7 @@ function App() {
           <div>
             <h4>Bias: {rating.bias} </h4>
             <h4>Source accuracy: {rating.accuracy}</h4>
+            <h4>{`Score: ${scores[0] + scores[1]} / 10`}</h4>
           </div>
         ) : (
             <h4>It appears there is no bias documeted for this webiste! Please feel free to submit
