@@ -10,6 +10,7 @@ import './styles/styles.scss';
 // Hooks
 import useWindowUrl from './hooks/useWindowUrl';
 import useWebsiteRating from './hooks/useWebsiteRating';
+import useWebsitePoints from './hooks/useWebsitePoints';
 
 function App() {
 
@@ -18,13 +19,20 @@ function App() {
 
   return (
     <div className="app-content">
-      <h1>Polario</h1>
-      <p>{'Url: ' + url}</p>
-      {rating !== null && rating !== undefined ? (
-        <p>Rating is {rating.bias}</p>
-      ) : (
-        <p>Not found</p>
-      )}
+      <h2 className="app-title">Polario Bias Report</h2>
+      <div className="report-content">
+        {rating !== undefined && rating !== null ? (
+          <div>
+            <h4>Bias: {rating.bias} </h4>
+            <h4>Source accuracy: {rating.accuracy}</h4>
+          </div>
+        ) : (
+            <h4>It appears there is no bias documeted for this webiste! Please feel free to submit
+            a report and/or suggestion.
+            </h4>
+          )}
+      </div>
+
     </div>
   );
 }
