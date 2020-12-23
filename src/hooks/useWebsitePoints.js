@@ -35,16 +35,16 @@ const accuracy_points = {
 const useWebsitePoints = (rating) => {
 
     const [score, setScore] = useState();
-
-    let bias = "";
-    let accuracy = "";
-
-    if (rating !== null && rating !== undefined) {
-        bias = rating.bias;
-        accuracy = rating.accuracy;
-    }
+    const [bias, setBias] = useState();
+    const [accuracy, setAccuracy] = useState();
 
     useEffect(() => {
+
+        if (rating !== null && rating !== undefined) {
+            setBias(rating.bias);
+            setAccuracy(rating.accuracy);
+        }
+
 
         let bias_score = bias_points[bias];
         let accuracy_score = accuracy_points[accuracy];
