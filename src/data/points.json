@@ -7,8 +7,7 @@
         "mixed": 3,
         "mostly factual": 4,
         "high": 5,
-        "very high": 6,
-        "not parsed": -1
+        "very high": 6
     },
     {
         "left": 1,
@@ -22,8 +21,6 @@
         "conspiracy/pseudoscience": 0,
         "satire": 0,
         "questionable": 1,
-        "pro-science": 4,
-        "not parsed": -1,
-        "": -1
+        "pro-science": 4
     }
 ]
