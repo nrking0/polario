@@ -4,8 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './styles/styles.scss';
 
 // Components
-import BiasSlider from './components/BiasSlider/BiasSlider';
-import Accuracy from './components/Accuracy/Accuracy';
+import Report from './components/Report/Report';
 
 // React Imports (e.g. Material UI)
 import { Divider } from '@material-ui/core';
@@ -54,15 +53,7 @@ function App() {
       <div className="report-content">
         {rating !== undefined && rating !== null ? (
           <div>
-            <Divider />
-            <h3>{rating.bias}</h3>
-            <BiasSlider bias={rating.bias} />
-            <h2>Source accuracy</h2>
-            <Divider />
-            <Accuracy accuracy={rating.accuracy} />
-            <h2>Score</h2>
-            <Divider />
-            <h2>{`${scores[0] + scores[1]} / 10`}</h2>
+            <Report bias={rating.bias} accuracy={rating.accuracy} score={scores[0] + scores[1]} />
           </div>
         ) : (
             <h3>

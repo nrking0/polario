@@ -14,9 +14,11 @@ const Accuracy = (props) => {
         "very high": "excellent"
     }
 
+    console.log(props.accuracy);
+
     return (
         <div className={`accuracy-content ${backgroundColor[props.accuracy]}`}>
-            <h3 className="accuracy-text">{props.accuracy.toUpperCase()}</h3>
+            <h3 className="accuracy-text">{`Accuracy: ${props.accuracy.toUpperCase()}`}</h3>
         </div>
     )
 }
