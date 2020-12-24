@@ -32,7 +32,7 @@ function App() {
       const search_results = mbfc.sources.find(source => {
         return source.url.indexOf(url) !== -1;
       });
-      
+
       if (search_results !== undefined) {
         let bias_score = points[1][search_results.bias];
         let accuracy_score = points[0][search_results.accuracy];
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="app-content">
-      <h2 className="app-title">Polario Bias Report</h2>
+      <h1 className="app-title">Polario Bias Report</h1>
       <div className="report-content">
         {rating !== undefined && rating !== null ? (
           <div>
