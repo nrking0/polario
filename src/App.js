@@ -5,6 +5,7 @@ import './styles/styles.scss';
 
 // Components
 import BiasSlider from './components/BiasSlider/BiasSlider';
+import Accuracy from './components/Accuracy/Accuracy';
 
 // React Imports (e.g. Material UI)
 import { Divider } from '@material-ui/core';
@@ -21,6 +22,8 @@ function App() {
   const [rating, setRating] = useState();
   const [scores, setScores] = useState();
 
+  let count = 0;
+
   useEffect(() => {
     chrome.tabs.query({ 'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT },
       function (tabs) {
@@ -28,9 +31,9 @@ function App() {
       }
     );
 
-    if (url !== "") {
+    if (url !== "" && url !== undefined) {
       const search_results = mbfc.sources.find(source => {
-        return source.url.indexOf(url) !== -1;
+        return source.url.indexOf(url) !== -1 || source.url.indexOf(url.substring(4)) !== -1;
       });
 
       if (search_results !== undefined) {
@@ -51,13 +54,12 @@ function App() {
       <div className="report-content">
         {rating !== undefined && rating !== null ? (
           <div>
-            <h2>Bias</h2>
             <Divider />
             <h3>{rating.bias}</h3>
             <BiasSlider bias={rating.bias} />
             <h2>Source accuracy</h2>
             <Divider />
-            <h3>{rating.accuracy}</h3>
+            <Accuracy accuracy={rating.accuracy} />
             <h2>Score</h2>
             <Divider />
             <h2>{`${scores[0] + scores[1]} / 10`}</h2>
