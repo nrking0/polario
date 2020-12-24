@@ -1,0 +1,12 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+
+.score-content {
+    width: 30%;
+    margin: auto;
+    height: 50px;
+    
+    .score-text {
+        font-weight: bolder;
+    }
+}

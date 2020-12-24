@@ -1,0 +1,62 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+
+.bias-slider-wrapper {
+    
+    position: relative;
+    
+    .bias-slider {
+        
+        width: 80%;
+        padding: 10px;
+        margin: auto;
+        background-image: linear-gradient(
+            to right,
+            #1404bd,
+            #573fce,
+            #806bdc,
+            #a797e9,
+            #ccc3f4,
+            #d9c6f4,
+            #e5caf4,
+            #f0cef4,
+            #f8a2d6,
+            #ff72a2,
+            #fa3c5d,
+            #de0100
+        );
+
+        .dots {
+            display: flex;
+            width: inherit;
+            position: absolute;
+            top: 0;
+            justify-content: space-between;
+            .fill {
+                // position: absolute;
+                position: relative;
+                background-color: white;
+                padding: 10px;
+                margin: 0;
+                border-radius: 50%;
+            }
+            .no-fill {
+                // position: absolute;
+                position: relative;
+                background-color: transparent;
+                padding: 10px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .bias-labels {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        width: 80%;
+        justify-content: space-between;
+    }
+
+
+}
